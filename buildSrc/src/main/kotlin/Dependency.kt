@@ -39,4 +39,6 @@ object AndroidDependencies {
     const val HILT_WORK = "androidx.hilt:hilt-work:${AndroidLibsVersions.HILT_WORK}"
     const val COROUTINES =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${AndroidLibsVersions.COROUTINES}"
+
+    const val SHIMMER = "com.facebook.shimmer:shimmer:${AndroidLibsVersions.SHIMMER}"
 }

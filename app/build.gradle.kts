@@ -16,6 +16,7 @@ android {
         versionName = DefaultConfig.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildFeatures.viewBinding = true
     }
 
     buildTypes {

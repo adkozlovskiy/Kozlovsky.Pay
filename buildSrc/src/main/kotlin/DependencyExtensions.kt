@@ -57,6 +57,10 @@ fun DependencyHandler.worker() {
     implementation(AndroidDependencies.HILT_WORK)
 }
 
+fun DependencyHandler.shimmer() {
+    implementation(AndroidDependencies.SHIMMER)
+}
+
 fun DependencyHandler.all() {
     coroutines()
     hilt()
@@ -67,6 +71,7 @@ fun DependencyHandler.all() {
     lifecycle()
     room()
     worker()
+    shimmer()
 }
 
 private fun DependencyHandler.implementation(dependency: String) {

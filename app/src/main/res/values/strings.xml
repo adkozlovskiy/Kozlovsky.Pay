@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Kozlovsky Pay</string>
+    <string name="menu_action_settings_title">Настройки</string>
 </resources>

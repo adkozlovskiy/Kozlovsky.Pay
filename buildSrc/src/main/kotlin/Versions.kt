@@ -25,4 +25,6 @@ object AndroidLibsVersions {
 
     const val RETROFIT = "2.9.0"
     const val SPLASH = "1.0.0-rc01"
+
+    const val SHIMMER = "0.5.0"
 }

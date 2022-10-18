@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Toolbar">
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="elevation">0dp</item>
+        <item name="navigationIcon">@drawable/ic_arrow_left_gray</item>
+        <item name="titleTextAppearance">@style/Title3</item>
+        <item name="titleMarginEnd">16dp</item>
+        <item name="titleMarginStart">16dp</item>
+    </style>
+
+    <style name="Title1" parent="Text">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:letterSpacing">@dimen/text_letter_spacing_title_1</item>
+        <item name="android:lineSpacingExtra">@dimen/line_spacing_extra_title_1</item>
+        <item name="android:textSize">@dimen/text_size_title_1</item>
+        <item name="lineHeight">@dimen/line_height_title_1</item>
+    </style>
+
+    <style name="Title2" parent="Text">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">@dimen/text_letter_spacing_title_2</item>
+        <item name="android:lineSpacingExtra">@dimen/line_spacing_extra_title_2</item>
+        <item name="android:textSize">@dimen/text_size_title_2</item>
+        <item name="android:textStyle">bold</item>
+        <item name="lineHeight">@dimen/line_height_title_2</item>
+    </style>
+
+    <style name="Title3" parent="Text">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">@dimen/text_letter_spacing_title_3</item>
+        <item name="android:lineSpacingExtra">@dimen/line_spacing_extra_title_3</item>
+        <item name="android:textSize">@dimen/text_size_title_3</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white_soft</item>
+        <item name="lineHeight">@dimen/line_height_title_3</item>
+    </style>
+
+    <style name="Text" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white_soft</item>
+    </style>
+
+    <style name="Callout" parent="Text">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:letterSpacing">@dimen/text_letter_spacing_callout</item>
+        <item name="android:lineSpacingExtra">@dimen/line_spacing_extra_callout</item>
+        <item name="android:textSize">@dimen/text_size_callout</item>
+        <item name="lineHeight">@dimen/line_height_callout</item>
+    </style>
+
+    <style name="Caption" parent="Text">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:letterSpacing">@dimen/text_letter_spacing_caption_1</item>
+        <item name="android:lineSpacingExtra">@dimen/line_spacing_extra_caption_1</item>
+        <item name="android:textSize">@dimen/text_size_caption_1</item>
+        <item name="lineHeight">@dimen/line_height_caption_1</item>
+    </style>
+
+    <style name="Footnote" parent="Text">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:letterSpacing">@dimen/text_letter_spacing_footnote</item>
+        <item name="android:lineSpacingExtra">@dimen/line_spacing_extra_footnote</item>
+        <item name="android:textSize">@dimen/text_size_footnote</item>
+        <item name="lineHeight">@dimen/line_height_footnote</item>
+    </style>
+
+    <style name="Headline1" parent="Text">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">@dimen/text_letter_spacing_headline_1</item>
+        <item name="android:lineSpacingExtra">@dimen/line_spacing_extra_headline_1</item>
+        <item name="android:textSize">@dimen/text_size_headline_1</item>
+        <item name="lineHeight">@dimen/line_height_headline_1</item>
+    </style>
+
+    <style name="Headline2" parent="Text">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">@dimen/text_letter_spacing_headline_2</item>
+        <item name="android:lineSpacingExtra">@dimen/line_spacing_extra_headline_2</item>
+        <item name="android:textSize">@dimen/text_size_headline_2</item>
+        <item name="android:textStyle">bold</item>
+        <item name="lineHeight">@dimen/line_height_headline_2</item>
+    </style>
+
+    <style name="Body" parent="Text">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:letterSpacing">@dimen/text_letter_spacing_body</item>
+        <item name="android:lineSpacingExtra">@dimen/line_spacing_extra_body</item>
+        <item name="android:textSize">@dimen/text_size_body</item>
+        <item name="lineHeight">@dimen/line_height_body</item>
+    </style>
+
+    <item name="text_font_weight_body" format="integer" type="dimen">400</item>
+    <item name="text_font_weight_callout" format="integer" type="dimen">400</item>
+    <item name="text_letter_spacing_body" format="float" type="dimen">0.008</item>
+    <item name="text_letter_spacing_callout" format="float" type="dimen">0.004</item>
+    <item name="text_letter_spacing_caption_1" format="float" type="dimen">0.014</item>
+    <item name="text_letter_spacing_footnote" format="float" type="dimen">0.0055</item>
+    <item name="text_letter_spacing_headline_1" format="float" type="dimen">0.005</item>
+    <item name="text_letter_spacing_headline_2" format="float" type="dimen">0.0084</item>
+    <item name="text_letter_spacing_title_1" format="float" type="dimen">0.005</item>
+    <item name="text_letter_spacing_title_2" format="float" type="dimen">0.0045</item>
+    <item name="text_letter_spacing_title_3" format="float" type="dimen">0.005</item>
+    <dimen name="text_size_body">16dp</dimen>
+    <dimen name="text_size_callout">14dp</dimen>
+    <dimen name="text_size_caption_1">11dp</dimen>
+    <dimen name="text_size_footnote">12dp</dimen>
+    <dimen name="text_size_headline_1">18dp</dimen>
+    <dimen name="text_size_headline_2">16dp</dimen>
+    <dimen name="text_size_title_1">30dp</dimen>
+    <dimen name="text_size_title_2">28dp</dimen>
+    <dimen name="text_size_title_3">20dp</dimen>
+    <dimen name="line_spacing_extra_body">1sp</dimen>
+    <dimen name="line_spacing_extra_callout">4sp</dimen>
+    <dimen name="line_spacing_extra_caption_1">-1sp</dimen>
+    <dimen name="line_spacing_extra_footnote">2sp</dimen>
+    <dimen name="line_spacing_extra_headline_1">3sp</dimen>
+    <dimen name="line_spacing_extra_headline_2">1sp</dimen>
+    <dimen name="line_spacing_extra_title_1">-3sp</dimen>
+    <dimen name="line_spacing_extra_title_2">-1sp</dimen>
+    <dimen name="line_spacing_extra_title_3">1sp</dimen>
+    <dimen name="line_height_body">20dp</dimen>
+    <dimen name="line_height_callout">20dp</dimen>
+    <dimen name="line_height_caption_1">12dp</dimen>
+    <dimen name="line_height_footnote">16dp</dimen>
+    <dimen name="line_height_headline_1">24dp</dimen>
+    <dimen name="line_height_headline_2">20dp</dimen>
+    <dimen name="line_height_title_1">32dp</dimen>
+    <dimen name="line_height_title_2">32dp</dimen>
+    <dimen name="line_height_title_3">24dp</dimen>
+</resources>

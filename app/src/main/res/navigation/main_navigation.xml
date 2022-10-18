@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="ru.kozlovsky.pay.presentation.home.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="ru.kozlovsky.pay.presentation.transaction.TransactionFragment"
+        android:label="TransactionFragment">
+        <action
+            android:id="@+id/action_transactionFragment_to_recipientFragment"
+            app:destination="@id/recipientFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipientFragment"
+        android:name="ru.kozlovsky.pay.presentation.recipient.RecipientFragment"
+        android:label="RecipientFragment" />
+</navigation>
