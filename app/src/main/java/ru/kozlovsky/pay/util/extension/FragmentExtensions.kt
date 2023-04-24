@@ -1,5 +1,7 @@
 package ru.kozlovsky.pay.util.extension
 
+import android.view.View
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
@@ -21,4 +23,11 @@ inline fun <T> Fragment.collectOnLifecycle(
             block(it)
         }
     }
+}
+
+fun Fragment.showKeyboard(et: EditText) {
+    et.requestFocus()
+    requireContext().showKeyboard(
+        view = activity?.currentFocus ?: View(requireContext())
+    )
 }

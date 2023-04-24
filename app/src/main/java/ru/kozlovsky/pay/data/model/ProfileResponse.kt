@@ -1,6 +1,6 @@
-package ru.kozlovsky.pay.domain.model
+package ru.kozlovsky.pay.data.model
 
-data class Profile(
+data class ProfileResponse(
     val profileId: Long? = null,
     val firstname: String? = null,
     val lastname: String? = null,

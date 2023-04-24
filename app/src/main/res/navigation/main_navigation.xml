@@ -7,19 +7,15 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="ru.kozlovsky.pay.presentation.home.HomeFragment"
-        android:label="HomeFragment">
-        <action
-            android:id="@+id/action_homeFragment_to_transactionFragment"
-            app:destination="@id/transactionFragment" />
-    </fragment>
+        android:label="HomeFragment" />
     <fragment
         android:id="@+id/transactionFragment"
         android:name="ru.kozlovsky.pay.presentation.transaction.TransactionFragment"
-        android:label="TransactionFragment">
-        <action
-            android:id="@+id/action_transactionFragment_to_recipientFragment"
-            app:destination="@id/recipientFragment" />
-    </fragment>
+        android:label="TransactionFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="ru.kozlovsky.pay.presentation.settings.SettingsFragment"
+        android:label="SettingsFragment" />
     <fragment
         android:id="@+id/recipientFragment"
         android:name="ru.kozlovsky.pay.presentation.recipient.RecipientFragment"

@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">Kozlovsky Pay</string>
+    <string name="app_name">HIKITA</string>
     <string name="menu_action_settings_title">Настройки</string>
+    <string name="phone_allowed_digits">0123456789 +-()</string>
 </resources>

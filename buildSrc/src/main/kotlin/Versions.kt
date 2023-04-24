@@ -27,4 +27,6 @@ object AndroidLibsVersions {
     const val SPLASH = "1.0.0-rc01"
 
     const val SHIMMER = "0.5.0"
+
+    const val INPUT_MASK = "6.1.0"
 }

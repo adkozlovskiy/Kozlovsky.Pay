@@ -34,7 +34,13 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
         accelerometer = sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
         with(binding) {
             ftMcvMakeTransactions.setOnClickListener {
-                viewModel.navigate(R.id.transactionFragment)
+//                viewModel.navigate(R.id.transactionFragment)
+            }
+            ftToolbar.setOnMenuItemClickListener {
+                if (it.itemId == R.id.action_settings) {
+//                    viewModel.navigate(R.id.settingsFragment)
+                    true
+                } else false
             }
         }
     }

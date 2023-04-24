@@ -41,4 +41,7 @@ object AndroidDependencies {
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${AndroidLibsVersions.COROUTINES}"
 
     const val SHIMMER = "com.facebook.shimmer:shimmer:${AndroidLibsVersions.SHIMMER}"
+
+    const val INPUT_MASK = "com.github.RedMadRobot:input-mask-android:${AndroidLibsVersions.INPUT_MASK}"
+
 }

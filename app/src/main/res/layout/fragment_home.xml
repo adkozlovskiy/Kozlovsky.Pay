@@ -50,23 +50,23 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:text="Козловский Алексей"
                 app:layout_constraintBottom_toTopOf="@id/ft_tv_account"
                 app:layout_constraintStart_toEndOf="@id/ft_iv_avatar"
                 app:layout_constraintTop_toTopOf="@id/ft_iv_avatar"
-                app:layout_constraintVertical_chainStyle="packed"
-                android:text="Козловский Алексей" />
+                app:layout_constraintVertical_chainStyle="packed" />
 
             <TextView
                 android:id="@+id/ft_tv_account"
                 style="@style/Callout"
                 android:layout_width="0dp"
-                android:textColor="@color/gray"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:text="120 129 012 003"
+                android:textColor="@color/gray"
                 app:layout_constraintBottom_toBottomOf="@id/ft_iv_avatar"
                 app:layout_constraintStart_toStartOf="@id/ft_tv_name"
-                app:layout_constraintTop_toBottomOf="@id/ft_tv_name"
-                android:text="120 129 012 003" />
+                app:layout_constraintTop_toBottomOf="@id/ft_tv_name" />
 
             <TextView
                 android:id="@+id/ft_tv_take_transactions"
@@ -132,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="Показать реквизиты"
-                android:textColor="#3D84FF"
+                android:textColor="@color/green"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/ft_cv_qr"
                 app:layout_constraintStart_toEndOf="@id/ft_cv_qr"
@@ -167,10 +167,11 @@
                     style="@style/Callout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/gray"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginVertical="12dp"
-                    android:text="По телефону или номеру счета" />
+                    android:background="@null"
+                    android:text="По номеру телефона"
+                    android:textColor="@color/gray" />
 
             </androidx.cardview.widget.CardView>
 

@@ -32,6 +32,7 @@ fun DependencyHandler.androidDefaults() {
     implementation(AndroidDependencies.MATERIAL)
     implementation(AndroidDependencies.CORE_KTX)
     implementation(AndroidDependencies.FRAGMENT_KTX)
+    implementation(AndroidDependencies.INPUT_MASK)
 }
 
 fun DependencyHandler.network() {
