@@ -2,11 +2,11 @@ package ru.kozlovsky.pay.data.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import ru.kozlovsky.pay.data.model.entity.ProfileEntity
+import ru.kozlovsky.pay.data.model.entity.CustomerEntity
 
 @Database(
     entities = [
-        ProfileEntity::class
+        CustomerEntity::class
     ],
     version = 1,
     exportSchema = false

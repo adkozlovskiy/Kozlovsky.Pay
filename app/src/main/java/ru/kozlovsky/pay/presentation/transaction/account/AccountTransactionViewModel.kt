@@ -1,0 +1,29 @@
+package ru.kozlovsky.pay.presentation.transaction.account
+
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import ru.kozlovsky.pay.core.BaseViewModel
+import javax.inject.Inject
+
+class AccountTransactionViewModel @Inject constructor() : BaseViewModel() {
+
+    private val _buttonEnabled = MutableStateFlow(false)
+    val buttonEnabled = _buttonEnabled.asStateFlow()
+
+    private var input: String? = null
+
+    fun afterInputChanged(maskFilled: Boolean, formattedValue: String) {
+        if (maskFilled) {
+            input = formattedValue
+        }
+        _buttonEnabled.value = maskFilled
+    }
+
+    fun onContinue() {
+        if (input == null) return
+//        navigate(
+//            R.id.recipientFragment,
+//            bundleOf(RecipientFragment.KEY_PHONE_NUMBER to input)
+//        )
+    }
+}

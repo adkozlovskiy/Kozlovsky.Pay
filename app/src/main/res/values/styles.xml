@@ -10,6 +10,23 @@
         <item name="titleMarginStart">16dp</item>
     </style>
 
+    <style name="RoundedBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/RoundedBottomSheet</item>
+    </style>
+
+    <style name="RoundedBottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/RoundedShapeAppearanceBottomSheetDialog</item>
+        <item name="backgroundTint">@color/background</item>
+    </style>
+
+    <style name="RoundedShapeAppearanceBottomSheetDialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
     <style name="Title1" parent="Text">
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:letterSpacing">@dimen/text_letter_spacing_title_1</item>

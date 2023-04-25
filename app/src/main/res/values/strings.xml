@@ -1,5 +1,26 @@
 <resources>
-    <string name="app_name">HIKITA</string>
-    <string name="menu_action_settings_title">Настройки</string>
-    <string name="phone_allowed_digits">0123456789 +-()</string>
+    <string name="app_name" translatable="false">Sky Pay</string>
+    <string name="menu_action_settings_title">Settings</string>
+    <string name="phone_allowed_digits" translatable="false">0123456789 +-()</string>
+    <string name="account_allowed_digits" translatable="false">0123456789</string>
+    <string name="home">Home</string>
+    <string name="transactions">Transactions</string>
+    <string name="profile">Profile</string>
+    <string name="menu_action_scanner_title">Scanner</string>
+    <string name="registration">Регистрация</string>
+    <string name="menu_action_filter_title">Filter</string>
+    <string name="make_number_transaction">по номеру счета</string>
+    <string name="make_qr_transaction">по QR-коду</string>
+    <string name="menu_action_notifications_title">Notifications</string>
+    <string name="enter_account_number">Введите номер счета</string>
+    <string name="btn_continue">Продолжить</string>
+    <string name="enter_phone_number">Введите номер телефона</string>
+    <string name="profile_item_my_data">Мои данные</string>
+    <string name="profile_item_safety">Безопасность</string>
+    <string name="profile_item_settings">Настройки</string>
+    <string name="profile_item_support">Служба поддержки</string>
+    <string name="menu_action_qr_title">Show QR</string>
+    <string name="camera_access_denied_title">Доступ к камере запрещен</string>
+    <string name="camera_access_denied_description">Вы запретили доступ к камере, разрешите его в настройках</string>
+    <string name="go_to_settings">Перейти в настройки</string>
 </resources>

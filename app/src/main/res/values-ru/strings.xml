@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_action_settings_title">Настройки</string>
+    <string name="home">Главная</string>
+    <string name="transactions">Транзакции</string>
+    <string name="profile">Профиль</string>
+    <string name="menu_action_scanner_title">Сканнер</string>
+</resources>

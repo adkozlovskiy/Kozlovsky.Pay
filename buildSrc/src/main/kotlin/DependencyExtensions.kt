@@ -33,6 +33,7 @@ fun DependencyHandler.androidDefaults() {
     implementation(AndroidDependencies.CORE_KTX)
     implementation(AndroidDependencies.FRAGMENT_KTX)
     implementation(AndroidDependencies.INPUT_MASK)
+    implementation(AndroidDependencies.LOTTIE)
 }
 
 fun DependencyHandler.network() {
@@ -62,6 +63,14 @@ fun DependencyHandler.shimmer() {
     implementation(AndroidDependencies.SHIMMER)
 }
 
+fun DependencyHandler.ui() {
+    implementation(AndroidDependencies.DOTS_INDOCATOR)
+}
+
+fun DependencyHandler.scanner() {
+    implementation(AndroidDependencies.Scanner.VISION)
+}
+
 fun DependencyHandler.all() {
     coroutines()
     hilt()
@@ -73,6 +82,8 @@ fun DependencyHandler.all() {
     room()
     worker()
     shimmer()
+    scanner()
+    ui()
 }
 
 private fun DependencyHandler.implementation(dependency: String) {

@@ -1,9 +1,11 @@
 <resources>
 
     <style name="Theme.KozlovskyPay" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorSecondary">@color/green</item>
+        <item name="colorSecondary">@color/blue_accent</item>
+        <item name="colorPrimary">@color/blue_accent</item>
         <item name="android:statusBarColor">@color/background</item>
-        <item name="android:navigationBarColor">@color/black</item>
+        <item name="android:navigationBarColor">@color/background_deep</item>
         <item name="android:windowBackground">@color/background</item>
+        <item name="bottomSheetDialogTheme">@style/RoundedBottomSheetDialog</item>
     </style>
 </resources>

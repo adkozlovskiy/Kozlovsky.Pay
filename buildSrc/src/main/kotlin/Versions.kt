@@ -8,10 +8,9 @@ object GradlePluginsVersions {
     const val BUILD_TOOLS = "7.2.1"
     const val HILT = "2.38.1"
 }
-
 object AndroidLibsVersions {
     const val HILT = "2.38.1"
-    const val NAVIGATION = "2.4.1"
+    const val NAVIGATION = "2.3.5"
 
     const val APPCOMPAT = "1.4.0"
     const val MATERIAL = "1.4.0"
@@ -29,4 +28,9 @@ object AndroidLibsVersions {
     const val SHIMMER = "0.5.0"
 
     const val INPUT_MASK = "6.1.0"
+
+    const val VISION = "11.8.0"
+    const val LOTTIE = "6.0.0"
+
+    const val DOTS_INDICATOR = "4.3"
 }

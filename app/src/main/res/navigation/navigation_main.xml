@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="ru.kozlovsky.pay.presentation.home.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="ru.kozlovsky.pay.presentation.transaction.phone.PhoneTransactionFragment"
+        android:label="TransactionFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="ru.kozlovsky.pay.presentation.settings.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/recipientFragment"
+        android:name="ru.kozlovsky.pay.presentation.recipient.RecipientFragment"
+        android:label="RecipientFragment" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="ru.kozlovsky.pay.presentation.profile.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/scannerFragment"
+        android:name="ru.kozlovsky.pay.presentation.scanner.ScannerFragment"
+        android:label="ScannerFragment" />
+    <fragment
+        android:id="@+id/navigation_transactions"
+        android:name="ru.kozlovsky.pay.presentation.transactions.TransactionsFragment"
+        android:label="TransactionsFragment" />
+    <fragment
+        android:id="@+id/accountTransactionFragment"
+        android:name="ru.kozlovsky.pay.presentation.transaction.account.AccountTransactionFragment"
+        android:label="AccountTransactionFragment" />
+    <dialog
+        android:id="@+id/recipientDialogFragment"
+        android:name="ru.kozlovsky.pay.presentation.scanner.recipient.RecipientDialogFragment"
+        android:label="RecipientDialogFragment" />
+</navigation>

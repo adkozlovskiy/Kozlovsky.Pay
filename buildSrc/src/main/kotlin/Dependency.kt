@@ -44,4 +44,11 @@ object AndroidDependencies {
 
     const val INPUT_MASK = "com.github.RedMadRobot:input-mask-android:${AndroidLibsVersions.INPUT_MASK}"
 
+    const val LOTTIE = "com.airbnb.android:lottie:${AndroidLibsVersions.LOTTIE}"
+
+    object Scanner {
+        const val VISION = "com.google.android.gms:play-services-vision:${AndroidLibsVersions.VISION}"
+    }
+
+    const val DOTS_INDOCATOR = "com.tbuonomo:dotsindicator:${AndroidLibsVersions.DOTS_INDICATOR}"
 }

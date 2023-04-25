@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="16dp">
+
+    <ImageView
+        android:id="@+id/it_iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_transaction_from"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/green" />
+
+    <TextView
+        android:id="@+id/it_tv_recipient"
+        style="@style/Callout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/white_soft"
+        app:layout_constraintBottom_toBottomOf="@id/it_iv_icon"
+        app:layout_constraintStart_toEndOf="@id/it_iv_icon"
+        app:layout_constraintTop_toTopOf="@id/it_iv_icon"
+        tools:text="поступление от Вадима" />
+
+    <TextView
+        android:id="@+id/it_tv_time"
+        style="@style/Footnote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toStartOf="@id/it_tv_recipient"
+        app:layout_constraintTop_toBottomOf="@id/it_tv_recipient"
+        tools:text="25 апреля в 19:30" />
+
+    <TextView
+        android:id="@+id/amount"
+        style="@style/Callout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="+ 13.400Р" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
