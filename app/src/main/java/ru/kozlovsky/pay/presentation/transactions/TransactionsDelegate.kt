@@ -8,6 +8,7 @@ import ru.kozlovsky.pay.domain.model.Transaction
 import ru.kozlovsky.pay.presentation.adapter.BaseDelegate
 import ru.kozlovsky.pay.presentation.adapter.BaseViewHolder
 import ru.kozlovsky.pay.presentation.adapter.ListItem
+import ru.kozlovsky.pay.util.extension.formatAsCurrency
 
 class TransactionsDelegate : BaseDelegate<Transaction, ItemTransactionBinding>() {
     override fun isRelativeItem(item: ListItem) = item is Transaction
@@ -32,7 +33,7 @@ class TransactionsDelegate : BaseDelegate<Transaction, ItemTransactionBinding>()
         override fun onBind(item: Transaction) {
             itemViewBinding.itTvRecipient.text = "Жопа"// todo
             itemViewBinding.itTvTime.text = "25 апреля 2023г."
-            itemViewBinding.amount.text = "+${item.amount} Р."
+            itemViewBinding.amount.text = item.amount.formatAsCurrency()
         }
     }
 }

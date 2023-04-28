@@ -5,4 +5,27 @@
     <string name="transactions">Транзакции</string>
     <string name="profile">Профиль</string>
     <string name="menu_action_scanner_title">Сканнер</string>
+    <string name="registration">Регистрация</string>
+    <string name="menu_action_filter_title">Фильтры</string>
+    <string name="make_number_transaction">по номеру счета</string>
+    <string name="make_qr_transaction">по QR-коду</string>
+    <string name="menu_action_notifications_title">Уведомления</string>
+    <string name="enter_account_number">Введите номер счета</string>
+    <string name="btn_continue">Продолжить</string>
+    <string name="enter_phone_number">Введите номер телефона</string>
+    <string name="profile_item_my_data">Мои данные</string>
+    <string name="profile_item_safety">Безопасность</string>
+    <string name="profile_item_settings">Настройки</string>
+    <string name="profile_item_support">Служба поддержки</string>
+    <string name="menu_action_qr_title">Показать QR</string>
+    <string name="camera_access_denied_title">Доступ к камере запрещен</string>
+    <string name="camera_access_denied_description">Вы запретили доступ к камере, разрешите его в настройках</string>
+    <string name="go_to_settings">Перейти в настройки</string>
+    <string name="acc_delete_disclaimer">Или, чтобы отказаться от услуг, вы можете \nудалить аккаунт</string>
+    <string name="logout">Выйти из аккаунта</string>
+    <string name="acc_delete">удалить аккаунт</string>
+    <string name="forgot_pass">Забыли пароль?</string>
+    <string name="confirmation">Подтверждение</string>
+    <string name="recovery_password">Восстановление пароля</string>
+    <string name="make_transaction">Перевести</string>
 </resources>

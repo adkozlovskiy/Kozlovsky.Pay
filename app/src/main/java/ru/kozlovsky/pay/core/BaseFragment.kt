@@ -1,9 +1,11 @@
 package ru.kozlovsky.pay.core
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -40,7 +42,11 @@ abstract class BaseFragment<V : BaseViewModel, B : ViewBinding> : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.reInit(arguments)
+        val reInit = arguments?.getBoolean(KEY_RE_INIT)
+        Log.d("TAG", "onViewCreated: REINIT $reInit")
+        if (reInit == true) {
+            viewModel.reInit(arguments)
+        }
         configureView()
         observeViewModel()
     }
@@ -65,9 +71,16 @@ abstract class BaseFragment<V : BaseViewModel, B : ViewBinding> : Fragment() {
             is NavigationEvent.Up -> {
                 navController.navigateUp()
             }
+
             is NavigationEvent.Navigation -> {
-                navController.navigate(event.targetRes, event.args, event.navOptions)
+                val arguments = event.args ?: bundleOf()
+                arguments.putBoolean(KEY_RE_INIT, true)
+                navController.navigate(event.targetRes, arguments, event.navOptions)
             }
         }
+    }
+
+    companion object {
+        const val KEY_RE_INIT = "reInit"
     }
 }

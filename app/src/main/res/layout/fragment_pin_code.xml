@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/Headline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Алексей"
+        app:layout_constraintBottom_toTopOf="@id/ll_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <LinearLayout
+        android:id="@+id/ll_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/digit_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_name">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dot_one"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/background_deep"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/digit_one"
+            app:layout_constraintEnd_toStartOf="@id/dot_two"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dot_two"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/background_deep"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/digit_one"
+            app:layout_constraintEnd_toStartOf="@id/dot_three"
+            app:layout_constraintStart_toEndOf="@id/dot_one"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dot_three"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/background_deep"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/digit_one"
+            app:layout_constraintEnd_toStartOf="@id/dot_four"
+            app:layout_constraintStart_toEndOf="@id/dot_two"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dot_four"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="32dp"
+            app:cardBackgroundColor="@color/background_deep"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/digit_one"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/dot_three"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+    </LinearLayout>
+
+
+    <include
+        android:id="@+id/digit_one"
+        layout="@layout/item_pin_code_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/digit_four"
+        app:layout_constraintEnd_toEndOf="@id/digit_four"
+        app:layout_constraintStart_toStartOf="@id/digit_four" />
+
+    <include
+        android:id="@+id/digit_two"
+        layout="@layout/item_pin_code_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/digit_five"
+        app:layout_constraintEnd_toEndOf="@id/digit_five"
+        app:layout_constraintStart_toStartOf="@id/digit_five" />
+
+    <include
+        android:id="@+id/digit_three"
+        layout="@layout/item_pin_code_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/digit_six"
+        app:layout_constraintEnd_toEndOf="@id/digit_six"
+        app:layout_constraintStart_toStartOf="@id/digit_six" />
+
+    <include
+        android:id="@+id/digit_four"
+        layout="@layout/item_pin_code_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/digit_seven"
+        app:layout_constraintEnd_toEndOf="@id/digit_seven"
+        app:layout_constraintStart_toStartOf="@id/digit_seven" />
+
+    <include
+        android:id="@+id/digit_five"
+        layout="@layout/item_pin_code_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/digit_eight"
+        app:layout_constraintEnd_toEndOf="@id/digit_eight"
+        app:layout_constraintStart_toStartOf="@id/digit_eight" />
+
+    <include
+        android:id="@+id/digit_six"
+        layout="@layout/item_pin_code_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/digit_nine"
+        app:layout_constraintEnd_toEndOf="@id/digit_nine"
+        app:layout_constraintStart_toStartOf="@id/digit_nine" />
+
+    <include
+        android:id="@+id/digit_seven"
+        layout="@layout/item_pin_code_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/logout"
+        app:layout_constraintEnd_toEndOf="@id/logout"
+        app:layout_constraintStart_toStartOf="@id/logout" />
+
+    <include
+        android:id="@+id/digit_eight"
+        layout="@layout/item_pin_code_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/digit_zero"
+        app:layout_constraintEnd_toEndOf="@id/digit_zero"
+        app:layout_constraintStart_toStartOf="@id/digit_zero" />
+
+    <include
+        android:id="@+id/digit_nine"
+        layout="@layout/item_pin_code_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/action"
+        app:layout_constraintEnd_toEndOf="@id/action"
+        app:layout_constraintStart_toStartOf="@id/action" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/logout"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="48dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="@color/background"
+        app:cardCornerRadius="64dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/digit_zero"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            style="@style/Callout"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:src="@drawable/ic_fingerprint"
+            android:text="@string/logout_button_pin"
+            app:tint="@color/white_soft" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <include
+        android:id="@+id/digit_zero"
+        layout="@layout/item_pin_code_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/action"
+        app:layout_constraintStart_toEndOf="@id/logout" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/action"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="48dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="@color/background"
+        app:cardCornerRadius="64dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/digit_zero">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="8dp"
+            android:src="@drawable/ic_fingerprint"
+            app:tint="@color/white_soft" />
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package ru.kozlovsky.pay.presentation.home
 import android.content.Context
 import android.hardware.Sensor
 import android.hardware.SensorManager
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import dagger.hilt.android.AndroidEntryPoint
 import ru.kozlovsky.pay.R
@@ -13,6 +14,7 @@ import ru.kozlovsky.pay.domain.model.Account
 import ru.kozlovsky.pay.domain.navigation.navigate
 import ru.kozlovsky.pay.presentation.adapter.compositeAdapter
 import ru.kozlovsky.pay.presentation.pager.AdjustingPageChangeCallback
+import ru.kozlovsky.pay.presentation.qr.QrFragment
 import ru.kozlovsky.pay.util.ShakeListener
 import ru.kozlovsky.pay.util.extension.collectOnLifecycle
 import ru.kozlovsky.pay.util.extension.setupPagerAdapter
@@ -32,12 +34,18 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
         add(
             AccountDelegate(
                 onShareClicked = {
-                    shareTextPlain(it.id.toString())
+                    // shareTextPlain(it.id.toString())
                 }
             )
-        ) { item, position ->
-
+        ) { item, _ ->
+            viewModel.navigateToQrFragment(item)
         }
+    }
+
+    private val recentRecipientAdapter = compositeAdapter {
+        add(
+            RecentRecipientDelegate()
+        )
     }
 
     private var sensorManager: SensorManager? = null
@@ -64,43 +72,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
             fhAccountsPager.setupPagerAdapter(accountsAdapter)
             dotsIndicator.attachTo(fhAccountsPager)
 
-            accountsAdapter.submitList(
-                listOf(
-                    Account(id = 12001210,
-                        balance = 1221312.1,
-                        created = 1,
-                        updated = 1,
-                        customer = null,
-                        status = AccountStatus.ACTIVE),
-                    Account(id = 12001210,
-                        balance = 1221312.1,
-                        created = 1,
-                        updated = 1,
-                        customer = null,
-                        status = AccountStatus.ACTIVE)
-                )
-            )
-            fhAccountsPager.updateOffscreenPageLimit(listOf(
-                Account(id = 12001210,
-                    balance = 1221312.1,
-                    created = 1,
-                    updated = 1,
-                    customer = null,
-                    status = AccountStatus.ACTIVE),
-                Account(id = 12001210,
-                    balance = 1221312.1,
-                    created = 1,
-                    updated = 1,
-                    customer = null,
-                    status = AccountStatus.ACTIVE)
-            ))
-
-            ftToolbar.setOnMenuItemClickListener {
-                if (it.itemId == R.id.action_show_qr) {
-                    // viewModel.navigate(R.id.scannerFragment)
-                    true
-                } else false
-            }
+            ftRvRecentRecipients.adapter = recentRecipientAdapter
 
             fhItemNumberTransaction.imtTitle.text = getString(R.string.make_number_transaction)
             fhItemNumberTransaction.imtIcon.setImageResource(R.drawable.ic_transaction_account)
@@ -115,6 +87,9 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
             fhItemNumberTransaction.root.setOnClickListener {
                 viewModel.navigate(R.id.accountTransactionFragment)
             }
+            qrBadge.root.setOnClickListener {
+                viewModel.navigateToPrimaryAccountQr()
+            }
         }
     }
 
@@ -122,6 +97,11 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
         super.observeViewModel()
         collectOnLifecycle(viewModel.recentRecipients) {
             binding.ftRvRecentRecipients.isVisible = it.isNotEmpty()
+            recentRecipientAdapter.submitList(it)
+        }
+        collectOnLifecycle(viewModel.accounts) {
+            accountsAdapter.submitList(it)
+            binding.fhAccountsPager.updateOffscreenPageLimit(it)
         }
     }
 

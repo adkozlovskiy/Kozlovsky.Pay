@@ -5,9 +5,11 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
+import ru.kozlovsky.pay.data.interceptor.TokenInterceptor
 import ru.kozlovsky.pay.data.repository.pay.PayRepository
 import ru.kozlovsky.pay.data.repository.pay.PayRepositoryImpl
 import ru.kozlovsky.pay.data.retrofit.AuthorizationService
@@ -24,8 +26,17 @@ object ApplicationModule {
 
     @Provides
     @Singleton
+    fun providesOkHttpClient(): OkHttpClient {
+        return OkHttpClient.Builder()
+            .addInterceptor(TokenInterceptor())
+            .build()
+    }
+
+    @Provides
+    @Singleton
     fun providesRetrofitClient(): Retrofit {
         return Retrofit.Builder()
+            .baseUrl("")
             .addConverterFactory(
                 GsonConverterFactory.create()
             )

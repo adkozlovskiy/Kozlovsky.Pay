@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/fp_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/fp_toolbar"
+            style="@style/Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            app:title="@string/confirmation"
+            app:titleTextColor="@color/white_soft" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        style="@style/Callout"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="@string/confirmation_disclaimer"
+        android:textColor="@color/white_soft"
+        app:layout_constraintTop_toBottomOf="@id/fp_appbar" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/code_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="60dp"
+        app:cardBackgroundColor="@color/background_deep"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <EditText
+            android:id="@+id/code"
+            android:textAppearance="@style/Title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:background="@null"
+            android:textColor="@color/white_soft"
+            android:gravity="center"
+            android:inputType="number"
+            android:letterSpacing="0.5"
+            android:maxLength="4"
+            android:maxLines="1"
+            android:minEms="4"
+            android:paddingVertical="8dp"
+            android:singleLine="true"
+            android:textSize="48sp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/repeat"
+        android:layout_width="wrap_content"
+        style="@style/Footnote"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Запросить повторно через 1:00"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/code_card" />
+</androidx.constraintlayout.widget.ConstraintLayout>

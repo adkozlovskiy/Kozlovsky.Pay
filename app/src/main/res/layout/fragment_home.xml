@@ -19,10 +19,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/background"
-            app:menu="@menu/menu_home"
             app:navigationIcon="@null"
             app:title="@string/home"
-            app:titleTextColor="@color/white_soft" />
+            app:titleTextColor="@color/white_soft">
+
+            <include
+                android:id="@+id/qr_badge"
+                layout="@layout/item_qr_badge"
+                android:layout_marginEnd="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end" />
+
+        </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -81,6 +90,7 @@
                     android:layout_marginTop="20dp"
                     android:clipToPadding="false"
                     android:orientation="horizontal"
+                    android:overScrollMode="never"
                     android:paddingHorizontal="4dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintTop_toBottomOf="@id/ft_tv_make_transactions"

@@ -2,13 +2,16 @@ package ru.kozlovsky.pay.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
-import androidx.navigation.findNavController
+import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
 import ru.kozlovsky.pay.R
+import ru.kozlovsky.pay.core.BaseFragment.Companion.KEY_RE_INIT
 import ru.kozlovsky.pay.databinding.ActivityMainBinding
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -36,6 +39,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.amBottomNavView.setupWithNavController(navController)
+        proceedReInitToNavigation(navController)
+    }
+
+    @Suppress("deprecation")
+    private fun proceedReInitToNavigation(navController: NavController) {
+        binding.amBottomNavView.setOnNavigationItemSelectedListener { item ->
+            navController.navigate(
+                item.itemId,
+                bundleOf(KEY_RE_INIT to true)
+            )
+            true
+        }
     }
 
     override fun onDestroy() {

@@ -8,6 +8,11 @@ import ru.kozlovsky.pay.domain.model.Account
 import ru.kozlovsky.pay.presentation.adapter.BaseDelegate
 import ru.kozlovsky.pay.presentation.adapter.BaseViewHolder
 import ru.kozlovsky.pay.presentation.adapter.ListItem
+import ru.kozlovsky.pay.util.Constants.BALANCE_HIDDEN_VALUE
+import ru.kozlovsky.pay.util.extension.formatAsCurrency
+import ru.kozlovsky.pay.util.extension.getMaskedText
+import java.text.NumberFormat
+import java.util.Currency
 
 class AccountDelegate(
     private val onShareClicked: (Account) -> Unit,
@@ -31,8 +36,13 @@ class AccountDelegate(
 
     inner class AccountViewHolder(binding: ItemAccountBinding) : BaseViewHolder<ItemAccountBinding, Account>(binding) {
         override fun onBind(item: Account) {
-            itemViewBinding.balance.text = "${item.balance} Р."
-            itemViewBinding.number.text = item.id.toString()
+            if (item.balanceHidden) {
+                itemViewBinding.balance.text = BALANCE_HIDDEN_VALUE
+            } else {
+                itemViewBinding.balance.text = item.balance.formatAsCurrency()
+            }
+
+            itemViewBinding.number.text = "Основной счет"
 
             itemViewBinding.root.setOnClickListener {
                 onItemClickListener?.invoke(item, adapterPosition)

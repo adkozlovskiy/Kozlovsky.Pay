@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/navigation_home">
+    app:startDestination="@id/pinCodeFragment">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -40,4 +40,40 @@
         android:id="@+id/recipientDialogFragment"
         android:name="ru.kozlovsky.pay.presentation.scanner.recipient.RecipientDialogFragment"
         android:label="RecipientDialogFragment" />
+    <fragment
+        android:id="@+id/authorizationFragment"
+        android:name="ru.kozlovsky.pay.presentation.auth.AuthorizationFragment"
+        android:label="AuthorizationFragment" />
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="ru.kozlovsky.pay.presentation.confirmation.ConfirmationFragment"
+        android:label="ConfirmationFragment" />
+    <fragment
+        android:id="@+id/recoveryPasswordFragment"
+        android:name="ru.kozlovsky.pay.presentation.recovery.RecoveryPasswordFragment"
+        android:label="RecoveryPasswordFragment" />
+    <fragment
+        android:id="@+id/pinCodeFragment"
+        android:name="ru.kozlovsky.pay.presentation.pin.PinCodeFragment"
+        android:label="PinCodeFragment" />
+    <dialog
+        android:id="@+id/qrFragment"
+        android:name="ru.kozlovsky.pay.presentation.qr.QrFragment"
+        android:label="QrFragment" />
+    <fragment
+        android:id="@+id/accountDetailsFragment"
+        android:name="ru.kozlovsky.pay.presentation.detail.AccountDetailsFragment"
+        android:label="AccountDetailsFragment" />
+    <fragment
+        android:id="@+id/customerDataFragment"
+        android:name="ru.kozlovsky.pay.presentation.data.CustomerDataFragment"
+        android:label="CustomerDataFragment" />
+    <fragment
+        android:id="@+id/supportFragment"
+        android:name="ru.kozlovsky.pay.presentation.support.SupportFragment"
+        android:label="SupportFragment" />
+    <fragment
+        android:id="@+id/safetyFragment"
+        android:name="ru.kozlovsky.pay.presentation.safety.SafetyFragment"
+        android:label="SafetyFragment" />
 </navigation>

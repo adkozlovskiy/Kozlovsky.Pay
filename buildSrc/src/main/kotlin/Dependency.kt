@@ -51,4 +51,6 @@ object AndroidDependencies {
     }
 
     const val DOTS_INDOCATOR = "com.tbuonomo:dotsindicator:${AndroidLibsVersions.DOTS_INDICATOR}"
+    const val ZXING = "com.google.zxing:core:${AndroidLibsVersions.ZXING}"
+    const val GLIDE = "com.github.bumptech.glide:glide:${AndroidLibsVersions.GLIDE}"
 }

@@ -65,10 +65,12 @@ fun DependencyHandler.shimmer() {
 
 fun DependencyHandler.ui() {
     implementation(AndroidDependencies.DOTS_INDOCATOR)
+    implementation(AndroidDependencies.GLIDE)
 }
 
 fun DependencyHandler.scanner() {
     implementation(AndroidDependencies.Scanner.VISION)
+    implementation(AndroidDependencies.ZXING)
 }
 
 fun DependencyHandler.all() {

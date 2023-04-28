@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/background"
-            app:title="Перевести"
+            app:title="@string/make_transaction"
             app:titleTextColor="@color/white_soft" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:hint="0100 0133 000 00 00"
+            android:hint="@string/account_placeholder"
             android:imeOptions="actionNext"
             android:maxLines="1"
             android:paddingHorizontal="24dp"

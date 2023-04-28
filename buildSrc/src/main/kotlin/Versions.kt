@@ -33,4 +33,7 @@ object AndroidLibsVersions {
     const val LOTTIE = "6.0.0"
 
     const val DOTS_INDICATOR = "4.3"
+    const val ZXING = "3.5.1"
+
+    const val GLIDE = "4.14.2"
 }

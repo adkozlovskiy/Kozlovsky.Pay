@@ -15,3 +15,7 @@ fun BaseViewModel.navigate(@IdRes to: Int, args: Bundle? = null, navOptions: Nav
 fun BaseViewModel.navigateUp() {
     navigationEvent.tryEmit(NavigationEvent.Up)
 }
+
+fun popUpToInclusive(@IdRes to: Int): NavOptions {
+    return NavOptions.Builder().setPopUpTo(to, true).build()
+}

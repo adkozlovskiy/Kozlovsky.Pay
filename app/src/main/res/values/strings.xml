@@ -7,7 +7,7 @@
     <string name="transactions">Transactions</string>
     <string name="profile">Profile</string>
     <string name="menu_action_scanner_title">Scanner</string>
-    <string name="registration">Регистрация</string>
+    <string name="registration">Registration</string>
     <string name="menu_action_filter_title">Filter</string>
     <string name="make_number_transaction">по номеру счета</string>
     <string name="make_qr_transaction">по QR-коду</string>
@@ -23,4 +23,29 @@
     <string name="camera_access_denied_title">Доступ к камере запрещен</string>
     <string name="camera_access_denied_description">Вы запретили доступ к камере, разрешите его в настройках</string>
     <string name="go_to_settings">Перейти в настройки</string>
+    <string name="acc_delete_disclaimer">Или, чтобы отказаться от услуг, вы можете \nудалить аккаунт</string>
+    <string name="logout">Выйти из аккаунта</string>
+    <string name="acc_delete">удалить аккаунт</string>
+    <string name="forgot_pass">Забыли пароль?</string>
+    <string name="confirmation">Подтверждение</string>
+    <string name="recovery_password">Восстановление пароля</string>
+    <string name="account_placeholder" translatable="false">XX XX XXX XXX</string>
+    <string name="make_transaction">Перевести</string>
+    <string name="confirmation_disclaimer">Введите последние 4 цифры\nвходящего номера</string>
+    <string name="logout_button_pin">ВЫЙТИ</string>
+    <string name="account_details">Детали счета</string>
+    <string name="top_up">Пополнить</string>
+    <string name="withdraw">Вывести</string>
+    <string name="more">Еще</string>
+    <string name="transaction">Перевести</string>
+    <string name="suspend">Заморозить</string>
+    <string name="close">Заблокировать</string>
+    <string name="my_qr">Мой QR</string>
+    <string name="account_number_placeholder">Номер счета %s</string>
+    <string name="credentials">Реквизиты</string>
+    <string name="qr_code">QR-код</string>
+    <string name="qr_code_description">Для переводов</string>
+    <string name="link">Ссылка</string>
+    <string name="send_qr">Отправить</string>
+    <string name="enter_message">Введите сообщение</string>
 </resources>

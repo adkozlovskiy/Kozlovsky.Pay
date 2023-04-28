@@ -6,6 +6,9 @@
         <item name="elevation">0dp</item>
         <item name="navigationIcon">@drawable/ic_arrow_left_gray</item>
         <item name="titleTextAppearance">@style/Title3</item>
+        <item name="subtitleTextAppearance">@style/Callout</item>
+        <item name="titleTextColor">@color/white_soft</item>
+        <item name="subtitleTextColor">@color/white_soft</item>
         <item name="titleMarginEnd">16dp</item>
         <item name="titleMarginStart">16dp</item>
     </style>
