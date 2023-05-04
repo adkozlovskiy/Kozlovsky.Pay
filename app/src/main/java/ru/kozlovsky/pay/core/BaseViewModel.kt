@@ -14,4 +14,5 @@ abstract class BaseViewModel : ViewModel(), Navigable {
 
     open fun reInit(args: Bundle?) {}
 
+    open fun onResult(value: Any?) {}
 }

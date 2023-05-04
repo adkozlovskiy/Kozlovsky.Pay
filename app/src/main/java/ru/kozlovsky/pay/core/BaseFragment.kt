@@ -51,7 +51,12 @@ abstract class BaseFragment<V : BaseViewModel, B : ViewBinding> : Fragment() {
         observeViewModel()
     }
 
-    open fun configureView() {}
+    open fun configureView() {
+        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<Any?>(BaseBottomSheetDialog.KEY_RESULT)
+            ?.observe(viewLifecycleOwner) { result ->
+                viewModel.onResult(result)
+            }
+    }
 
     open fun observeViewModel() {
         // Подписываемся на события навигации
@@ -77,10 +82,19 @@ abstract class BaseFragment<V : BaseViewModel, B : ViewBinding> : Fragment() {
                 arguments.putBoolean(KEY_RE_INIT, true)
                 navController.navigate(event.targetRes, arguments, event.navOptions)
             }
+
+            is NavigationEvent.Result -> {
+                proceedResult(event.value)
+            }
         }
+    }
+
+    private fun proceedResult(value: Any?) {
+        findNavController().previousBackStackEntry?.savedStateHandle?.set(KEY_RESULT, value)
     }
 
     companion object {
         const val KEY_RE_INIT = "reInit"
+        const val KEY_RESULT = "result"
     }
 }

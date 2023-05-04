@@ -76,4 +76,8 @@
         android:id="@+id/safetyFragment"
         android:name="ru.kozlovsky.pay.presentation.safety.SafetyFragment"
         android:label="SafetyFragment" />
+    <dialog
+        android:id="@+id/transactionsBottomDialog"
+        android:name="ru.kozlovsky.pay.presentation.transaction.TransactionsBottomDialog"
+        android:label="TransactionsBottomDialog" />
 </navigation>

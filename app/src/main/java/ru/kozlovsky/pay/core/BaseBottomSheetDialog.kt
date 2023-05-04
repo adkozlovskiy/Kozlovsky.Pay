@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import ru.kozlovsky.pay.R
 import ru.kozlovsky.pay.core.viewmodel.ViewModelFactory
 import ru.kozlovsky.pay.domain.navigation.NavigationEvent
 import ru.kozlovsky.pay.util.extension.collectOnLifecycle
@@ -50,7 +51,12 @@ abstract class BaseBottomSheetDialog<V : BaseViewModel, B : ViewBinding> : Botto
         observeViewModel()
     }
 
-    open fun configureView() {}
+    open fun configureView() {
+        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<Any?>(KEY_RESULT)
+            ?.observe(viewLifecycleOwner) { result ->
+                viewModel.onResult(result)
+            }
+    }
 
     open fun observeViewModel() {
         // Подписываемся на события навигации
@@ -76,10 +82,23 @@ abstract class BaseBottomSheetDialog<V : BaseViewModel, B : ViewBinding> : Botto
                 arguments.putBoolean(KEY_RE_INIT, true)
                 navController.navigate(event.targetRes, arguments, event.navOptions)
             }
+
+            is NavigationEvent.Result -> {
+                proceedResult(event.value)
+            }
         }
+    }
+
+    private fun proceedResult(value: Any?) {
+        findNavController().previousBackStackEntry?.savedStateHandle?.set(KEY_RESULT, value)
+    }
+
+    override fun getTheme(): Int {
+        return R.style.RoundedBottomSheetDialog
     }
 
     companion object {
         const val KEY_RE_INIT = "reInit"
+        const val KEY_RESULT = "result"
     }
 }

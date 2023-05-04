@@ -99,7 +99,7 @@
                     app:drawableTopCompat="@drawable/ic_withdraw" />
 
                 <TextView
-                    android:id="@+id/fad_more"
+                    android:id="@+id/fad_make_transaction"
                     style="@style/Callout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -16,6 +16,10 @@ fun BaseViewModel.navigateUp() {
     navigationEvent.tryEmit(NavigationEvent.Up)
 }
 
+fun BaseViewModel.setResult(value: Any?) {
+    navigationEvent.tryEmit(NavigationEvent.Result(value))
+}
+
 fun popUpToInclusive(@IdRes to: Int): NavOptions {
     return NavOptions.Builder().setPopUpTo(to, true).build()
 }

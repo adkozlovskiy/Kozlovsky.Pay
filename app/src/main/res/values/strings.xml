@@ -23,7 +23,7 @@
     <string name="camera_access_denied_title">Доступ к камере запрещен</string>
     <string name="camera_access_denied_description">Вы запретили доступ к камере, разрешите его в настройках</string>
     <string name="go_to_settings">Перейти в настройки</string>
-    <string name="acc_delete_disclaimer">Или, чтобы отказаться от услуг, вы можете \nудалить аккаунт</string>
+    <string name="acc_delete_disclaimer">Чтобы отказаться от услуг, вы можете \nудалить аккаунт</string>
     <string name="logout">Выйти из аккаунта</string>
     <string name="acc_delete">удалить аккаунт</string>
     <string name="forgot_pass">Забыли пароль?</string>
@@ -41,7 +41,7 @@
     <string name="suspend">Заморозить</string>
     <string name="close">Заблокировать</string>
     <string name="my_qr">Мой QR</string>
-    <string name="account_number_placeholder">Номер счета %s</string>
+    <string name="account_number_placeholder">Номер счета ** ** *** %s</string>
     <string name="credentials">Реквизиты</string>
     <string name="qr_code">QR-код</string>
     <string name="qr_code_description">Для переводов</string>

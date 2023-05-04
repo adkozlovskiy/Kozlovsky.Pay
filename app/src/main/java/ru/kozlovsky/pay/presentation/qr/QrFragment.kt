@@ -3,18 +3,17 @@ package ru.kozlovsky.pay.presentation.qr
 import dagger.hilt.android.AndroidEntryPoint
 import ru.kozlovsky.pay.R
 import ru.kozlovsky.pay.core.BaseBottomSheetDialog
-import ru.kozlovsky.pay.core.BaseFragment
-import ru.kozlovsky.pay.databinding.FragmentQrBinding
+import ru.kozlovsky.pay.databinding.DialogQrBinding
 import ru.kozlovsky.pay.domain.navigation.navigateUp
 import ru.kozlovsky.pay.util.extension.collectOnLifecycle
 
 @AndroidEntryPoint
-class QrFragment : BaseBottomSheetDialog<QrViewModel, FragmentQrBinding>() {
+class QrFragment : BaseBottomSheetDialog<QrViewModel, DialogQrBinding>() {
     override val viewModelClass: Class<QrViewModel>
         get() = QrViewModel::class.java
 
-    override fun getViewBinding(): FragmentQrBinding {
-        return FragmentQrBinding.inflate(layoutInflater)
+    override fun getViewBinding(): DialogQrBinding {
+        return DialogQrBinding.inflate(layoutInflater)
     }
 
     override fun configureView() {
@@ -31,7 +30,9 @@ class QrFragment : BaseBottomSheetDialog<QrViewModel, FragmentQrBinding>() {
         }
 
         collectOnLifecycle(viewModel.account) {
-            binding.accNumber.text = getString(R.string.account_number_placeholder, it.formattedNumber)
+            binding.accNumber.text = getString(
+                R.string.account_number_placeholder, it.id.toString().takeLast(3)
+            )
         }
     }
 }

@@ -1,5 +1,9 @@
 package ru.kozlovsky.pay.util.extension
 
+object StringConstants {
+    const val EMPTY_STRING = ""
+}
+
 fun String.getMaskedText(mask: String, variableChar: Char, constChar: Char): String {
     val out = StringBuilder()
     var i = 0

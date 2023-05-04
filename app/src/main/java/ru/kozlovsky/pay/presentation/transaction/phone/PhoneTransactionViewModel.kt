@@ -2,7 +2,9 @@ package ru.kozlovsky.pay.presentation.transaction.phone
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import ru.kozlovsky.pay.R
 import ru.kozlovsky.pay.core.BaseViewModel
+import ru.kozlovsky.pay.domain.navigation.navigate
 import javax.inject.Inject
 
 class PhoneTransactionViewModel @Inject constructor() : BaseViewModel() {
@@ -21,9 +23,6 @@ class PhoneTransactionViewModel @Inject constructor() : BaseViewModel() {
 
     fun onContinue() {
         if (input == null) return
-//        navigate(
-//            R.id.recipientFragment,
-//            bundleOf(RecipientFragment.KEY_PHONE_NUMBER to input)
-//        )
+        navigate(R.id.recipientFragment)
     }
 }

@@ -63,6 +63,9 @@ class AccountDetailsFragment : BaseFragment<AccountDetailsViewModel, FragmentAcc
             fadMcvLink.root.setOnClickListener {
                 viewModel.copyAccountLink()
             }
+            fadMakeTransaction.setOnClickListener {
+                viewModel.navigate(R.id.transactionsBottomDialog)
+            }
         }
     }
 

@@ -14,4 +14,8 @@ sealed class NavigationEvent {
         val args: Bundle? = null,
         val navOptions: NavOptions? = null
     ) : NavigationEvent()
+
+    data class Result(
+        val value: Any?
+    ): NavigationEvent()
 }

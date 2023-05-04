@@ -1,14 +1,13 @@
 package ru.kozlovsky.pay.presentation.scanner
 
 import android.Manifest
-import android.content.Intent
 import android.content.pm.PackageManager
-import android.provider.Settings
 import android.util.SparseArray
 import android.view.SurfaceHolder
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts.RequestPermission
 import androidx.core.app.ActivityCompat
+import androidx.core.util.isNotEmpty
 import androidx.core.view.isVisible
 import com.airbnb.lottie.LottieDrawable.INFINITE
 import com.google.android.gms.vision.CameraSource
@@ -64,6 +63,9 @@ class ScannerFragment : BaseFragment<ScannerViewModel, FragmentScannerBinding>()
         collectOnLifecycle(viewModel.disclaimerVisible) {
             binding.fsLlDisclaimer.isVisible = it
         }
+        collectOnLifecycle(viewModel.foundAccount) {
+            viewModel.navigate(R.id.recipientDialogFragment)
+        }
     }
 
     @Suppress("deprecation")
@@ -108,9 +110,11 @@ class ScannerFragment : BaseFragment<ScannerViewModel, FragmentScannerBinding>()
 
             override fun receiveDetections(detections: Detector.Detections<Barcode?>) {
                 val barcodes: SparseArray<Barcode?> = detections.detectedItems
-                val barcode = barcodes.valueAt(0)
-                val account = barcode?.rawValue
-                viewModel.navigate(R.id.recipientDialogFragment)
+                if (barcodes.isNotEmpty()) {
+                    val barcode = barcodes.valueAt(0)
+                    val account = barcode?.rawValue
+                    viewModel.searchForAccount(account)
+                }
             }
         })
     }

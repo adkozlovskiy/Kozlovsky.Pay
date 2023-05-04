@@ -1,34 +1,30 @@
 package ru.kozlovsky.pay.presentation.scanner.recipient
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import ru.kozlovsky.pay.R
+import android.content.DialogInterface
+import dagger.hilt.android.AndroidEntryPoint
+import ru.kozlovsky.pay.core.BaseBottomSheetDialog
 import ru.kozlovsky.pay.databinding.DialogQrRecipientBinding
+import ru.kozlovsky.pay.domain.navigation.setResult
+import ru.kozlovsky.pay.presentation.scanner.ScannerViewModel
 
-class RecipientDialogFragment : BottomSheetDialogFragment() {
+@AndroidEntryPoint
+class RecipientDialogFragment : BaseBottomSheetDialog<ScannerViewModel, DialogQrRecipientBinding>() {
+    override val viewModelClass: Class<ScannerViewModel>
+        get() = ScannerViewModel::class.java
 
-    private var _binding: DialogQrRecipientBinding? = null
-    val binding get() = _binding!!
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = DialogQrRecipientBinding.inflate(layoutInflater)
-        return binding.root
+    override fun getViewBinding(): DialogQrRecipientBinding {
+        return DialogQrRecipientBinding.inflate(layoutInflater)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.tvRecipient.text = "здарова петушара"
+    override fun configureView() {
+        super.configureView()
+        binding.close.setOnClickListener {
+            dismiss()
+        }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-    override fun getTheme(): Int {
-        return R.style.RoundedBottomSheetDialog
+    override fun onDismiss(dialog: DialogInterface) {
+        super.onDismiss(dialog)
+        viewModel.setResult(true)
     }
 }
