@@ -1,5 +1,3 @@
-
-
 import org.gradle.api.artifacts.dsl.DependencyHandler
 
 fun DependencyHandler.coroutines() {
@@ -22,8 +20,6 @@ fun DependencyHandler.gradleGeneralClasspath() {
 }
 
 fun DependencyHandler.hiltPluginClasspath() {
-    classpath(GradlePlugins.BUILD_TOOLS)
-    classpath(GradlePlugins.KGP)
     classpath(GradlePlugins.HILT)
 }
 

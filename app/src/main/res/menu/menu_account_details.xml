@@ -3,11 +3,9 @@
 
     <item
         android:id="@+id/action_suspend"
-        android:title="@string/suspend"
-       />
+        android:title="@string/suspend" />
 
     <item
         android:id="@+id/action_close"
-        android:title="@string/close"
-        />
+        android:title="@string/close" />
 </menu>

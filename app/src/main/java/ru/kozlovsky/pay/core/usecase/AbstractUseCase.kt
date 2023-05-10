@@ -6,8 +6,10 @@ import ru.kozlovsky.pay.core.result.Result
 import ru.kozlovsky.pay.core.result.doOnSuccess
 import ru.kozlovsky.pay.core.result.failure.ExceptionResolver
 import ru.kozlovsky.pay.core.result.failure.Failure
+import ru.kozlovsky.pay.di.IODispatcher
 
 abstract class AbstractUseCase<in P, R, out F : Failure>(
+    @IODispatcher
     private val coroutineDispatcher: CoroutineDispatcher,
     private val exceptionResolver: ExceptionResolver<F>? = null,
 ) {

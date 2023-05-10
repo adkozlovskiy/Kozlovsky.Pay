@@ -76,3 +76,18 @@ inline fun <R, F : Failure> Result<R, F>.doOnSuccess(
     }
     return this
 }
+
+/**
+ * Function which invoke [function] block only when
+ * Result is failure.
+ * @param function function will be invoked when failure.
+ * @return result
+ */
+inline fun <R, F : Failure> Result<R, F>.doOnFailure(
+    function: () -> Unit,
+): Result<R, F> {
+    if (this is Result.UnresolvedFailure || this is Result.ResolvedFailure) {
+        function.invoke()
+    }
+    return this
+}

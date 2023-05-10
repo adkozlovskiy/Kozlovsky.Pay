@@ -6,18 +6,19 @@
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/ft_appbar"
+        android:id="@+id/fs_appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/ft_toolbar"
+            android:id="@+id/fs_toolbar"
             style="@style/Toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/background"
-            app:title="@string/profile_item_safety" />
+            app:title="Безопасность"
+            app:titleTextColor="@color/white_soft" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -30,12 +31,60 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/fs_tv_common"
+                style="@style/Headline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Конфиденциальность"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/incognito"
+                layout="@layout/item_settings_with_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <include
+                android:id="@+id/hidden_avatars"
+                layout="@layout/item_settings_with_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/fs_tv_notifications"
+                style="@style/Headline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Вход"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/fingerprint"
+                layout="@layout/item_settings_with_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <include
+                android:id="@+id/questions"
+                layout="@layout/item_settings_with_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
                 android:id="@+id/acc_delete"
                 style="@style/Footnote"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="20dp"
                 android:gravity="center_horizontal"
                 android:text="@string/acc_delete_disclaimer"
                 android:textColor="@color/gray" />

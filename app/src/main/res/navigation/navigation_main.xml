@@ -65,10 +65,6 @@
         android:name="ru.kozlovsky.pay.presentation.detail.AccountDetailsFragment"
         android:label="AccountDetailsFragment" />
     <fragment
-        android:id="@+id/customerDataFragment"
-        android:name="ru.kozlovsky.pay.presentation.data.CustomerDataFragment"
-        android:label="CustomerDataFragment" />
-    <fragment
         android:id="@+id/supportFragment"
         android:name="ru.kozlovsky.pay.presentation.support.SupportFragment"
         android:label="SupportFragment" />
@@ -80,4 +76,12 @@
         android:id="@+id/transactionsBottomDialog"
         android:name="ru.kozlovsky.pay.presentation.transaction.TransactionsBottomDialog"
         android:label="TransactionsBottomDialog" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="ru.kozlovsky.pay.presentation.registration.RegistrationFragment"
+        android:label="RegistrationFragment" />
+    <fragment
+        android:id="@+id/enterPasswordFragment"
+        android:name="ru.kozlovsky.pay.presentation.enterpass.EnterPasswordFragment"
+        android:label="EnterPasswordFragment" />
 </navigation>

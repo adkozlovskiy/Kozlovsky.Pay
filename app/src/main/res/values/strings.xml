@@ -41,11 +41,18 @@
     <string name="suspend">Заморозить</string>
     <string name="close">Заблокировать</string>
     <string name="my_qr">Мой QR</string>
-    <string name="account_number_placeholder">Номер счета ** ** *** %s</string>
+    <string name="account_number_placeholder_censored">Номер счета ** ** *** %s</string>
     <string name="credentials">Реквизиты</string>
     <string name="qr_code">QR-код</string>
     <string name="qr_code_description">Для переводов</string>
     <string name="link">Ссылка</string>
     <string name="send_qr">Отправить</string>
     <string name="enter_message">Введите сообщение</string>
+    <string name="account_number_placeholder">"Номер счёта %s"</string>
+    <string name="enter_password">Введите пароль</string>
+    <string name="password">Пароль</string>
+    <string name="password_repeat">Пароль повторно</string>
+    <string name="username">Имя пользователя</string>
+    <string name="enter_pusername">Введите имя</string>
+    <string name="settings_phone">Номер телефона</string>
 </resources>

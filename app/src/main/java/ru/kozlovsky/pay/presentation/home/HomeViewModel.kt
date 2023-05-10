@@ -10,17 +10,20 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import ru.kozlovsky.pay.R
 import ru.kozlovsky.pay.core.BaseViewModel
-import ru.kozlovsky.pay.data.model.dto.AccountStatus
+import ru.kozlovsky.pay.core.result.doOnFailure
+import ru.kozlovsky.pay.core.result.doOnSuccess
+import ru.kozlovsky.pay.data.model.dto.toAccount
+import ru.kozlovsky.pay.data.model.dto.toRecentRecipient
 import ru.kozlovsky.pay.domain.model.Account
 import ru.kozlovsky.pay.domain.model.RecentRecipient
 import ru.kozlovsky.pay.domain.navigation.navigate
-import ru.kozlovsky.pay.domain.navigation.navigateUp
+import ru.kozlovsky.pay.domain.usecase.GetFullCustomerInfoUseCase
 import ru.kozlovsky.pay.presentation.adapter.ListItem
 import ru.kozlovsky.pay.presentation.detail.AccountDetailsFragment.Companion.KEY_ACCOUNT
 import javax.inject.Inject
 
 class HomeViewModel @Inject constructor(
-
+    private val getFullCustomerInfoUseCase: GetFullCustomerInfoUseCase,
 ) : BaseViewModel() {
 
     private var stateBalanceHidden = false
@@ -33,24 +36,18 @@ class HomeViewModel @Inject constructor(
 
     override fun reInit(args: Bundle?) {
         super.reInit(args)
-        _accounts.value = listOf(
-            Account(id = 3817117937,
-                balance = 1221312.1,
-                status = AccountStatus.ACTIVE),
-            Account(id = 3817117937,
-                balance = 1221312.1,
-                status = AccountStatus.ACTIVE)
-        )
-        _recentRecipients.value = listOf(
-            RecentRecipient("Теплов А.",
-                "https://sun9-17.userapi.com/impg/cC1aFq2Asr9tJwBCTpKa99cwoJVmynRhvobC4Q/9In9fUcPc2U.jpg?size=1071x1080&quality=95&sign=859861d91d20bf5dc17a6ed81c45d280&type=album"),
-            RecentRecipient("Касьянов М.",
-                "https://sun9-17.userapi.com/impg/cC1aFq2Asr9tJwBCTpKa99cwoJVmynRhvobC4Q/9In9fUcPc2U.jpg?size=1071x1080&quality=95&sign=859861d91d20bf5dc17a6ed81c45d280&type=album"),
-            RecentRecipient("Козловский А.",
-                "https://sun9-17.userapi.com/impg/cC1aFq2Asr9tJwBCTpKa99cwoJVmynRhvobC4Q/9In9fUcPc2U.jpg?size=1071x1080&quality=95&sign=859861d91d20bf5dc17a6ed81c45d280&type=album"),
-            RecentRecipient("Гладкий Н.",
-                "https://sun9-17.userapi.com/impg/cC1aFq2Asr9tJwBCTpKa99cwoJVmynRhvobC4Q/9In9fUcPc2U.jpg?size=1071x1080&quality=95&sign=859861d91d20bf5dc17a6ed81c45d280&type=album")
-        )
+        loadFullPersonInfo()
+    }
+
+    fun loadFullPersonInfo() = viewModelScope.launch {
+        getFullCustomerInfoUseCase.invoke(Unit)
+            .doOnFailure {
+
+            }
+            .doOnSuccess { response ->
+                _accounts.value = response.customer.accounts.orEmpty().map { it.toAccount() }
+                _recentRecipients.value = response.recentRecipients.map { it.toRecentRecipient() }
+            }
     }
 
     fun onShake() = viewModelScope.launch {

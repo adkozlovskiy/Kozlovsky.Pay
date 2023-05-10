@@ -30,6 +30,6 @@ class NetworkUtils @Inject constructor(
                 }
             }
         }
-        return networkConnected;
+        return networkConnected
     }
 }

@@ -47,7 +47,4 @@ class TransactionsBottomDialog : BaseBottomSheetDialog<TransactionsViewModel, Di
         }
     }
 
-    override fun observeViewModel() {
-        super.observeViewModel()
-    }
 }

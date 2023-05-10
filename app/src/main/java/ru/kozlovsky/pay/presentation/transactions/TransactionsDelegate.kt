@@ -2,6 +2,7 @@ package ru.kozlovsky.pay.presentation.transactions
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import ru.kozlovsky.pay.R
 import ru.kozlovsky.pay.databinding.ItemTransactionBinding
 import ru.kozlovsky.pay.domain.model.Transaction
@@ -31,9 +32,22 @@ class TransactionsDelegate : BaseDelegate<Transaction, ItemTransactionBinding>()
     inner class TransactionViewHolder(binding: ItemTransactionBinding) :
         BaseViewHolder<ItemTransactionBinding, Transaction>(binding) {
         override fun onBind(item: Transaction) {
-            itemViewBinding.itTvRecipient.text = "Жопа"// todo
-            itemViewBinding.itTvTime.text = "25 апреля 2023г."
-            itemViewBinding.amount.text = item.amount.formatAsCurrency()
+            with(itemViewBinding) {
+                itTvRecipient.text = item.account
+                itTvTime.text = "от 25 апреля 2023г. 16:45"
+                amount.text = item.amount.formatAsCurrency()
+                if (item.incoming) {
+                    itIvIcon.rotation = 0f
+                    itIvIcon.setColorFilter(
+                        ResourcesCompat.getColor(resources, R.color.green_light, context.theme)
+                    )
+                } else {
+                    itIvIcon.rotation = 180f
+                    itIvIcon.setColorFilter(
+                        ResourcesCompat.getColor(resources, R.color.gray, context.theme)
+                    )
+                }
+            }
         }
     }
 }

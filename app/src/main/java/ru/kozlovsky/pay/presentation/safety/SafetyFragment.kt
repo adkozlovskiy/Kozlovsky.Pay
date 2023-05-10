@@ -23,9 +23,14 @@ class SafetyFragment : BaseFragment<SafetyViewModel, FragmentSafetyBinding>() {
     override fun configureView() {
         super.configureView()
         with(binding) {
-            ftToolbar.setNavigationOnClickListener {
+            fsToolbar.setNavigationOnClickListener {
                 viewModel.navigateUp()
             }
+            incognito.title.text = "Режим инкогнито"
+            hiddenAvatars.title.text = "Скрыть мой аватар"
+            fingerprint.title.text = "По отпечатку пальца"
+            questions.title.text = "Контрольные вопросы"
+            questions.value.text = "установлено"
             val deleteAccount = getString(R.string.acc_delete)
             val spannable = SpannableString(accDelete.text)
             val indexOf = spannable.indexOf(deleteAccount)
@@ -51,7 +56,4 @@ class SafetyFragment : BaseFragment<SafetyViewModel, FragmentSafetyBinding>() {
         }
     }
 
-    override fun observeViewModel() {
-        super.observeViewModel()
-    }
 }

@@ -31,6 +31,18 @@ class PinCodeFragment : BaseFragment<PinCodeViewModel, FragmentPinCodeBinding>()
     override fun configureView() {
         super.configureView()
         with(binding) {
+            configureDigits()
+            action.setOnClickListener {
+                viewModel.actionButtonClicked()
+            }
+            logout.setOnClickListener {
+                viewModel.logout()
+            }
+        }
+    }
+
+    private fun configureDigits() {
+        with(binding) {
             digitOne.value.text = "1"
             digitOne.card.setOnClickListener {
                 viewModel.addDigit("1")
@@ -79,10 +91,6 @@ class PinCodeFragment : BaseFragment<PinCodeViewModel, FragmentPinCodeBinding>()
             digitZero.value.text = "0"
             digitZero.card.setOnClickListener {
                 viewModel.addDigit("0")
-            }
-
-            action.setOnClickListener {
-                viewModel.actionButtonClicked()
             }
         }
     }

@@ -11,10 +11,9 @@
         android:id="@+id/it_iv_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_transaction_from"
+        android:src="@drawable/ic_transaction_to"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/green" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/it_tv_recipient"

@@ -1,5 +1,7 @@
 package ru.kozlovsky.pay.data.model.dto
 
+import ru.kozlovsky.pay.domain.model.RecentRecipient
+
 data class CustomerDto(
     val id: Long? = null,
     val phone: String,
@@ -12,6 +14,8 @@ data class CustomerDto(
 
     fun isBlocked() = status == CustomerStatus.BLOCKED
 }
+
+fun CustomerDto.toRecentRecipient() = RecentRecipient(name!!, src!!.id.toString())
 
 enum class CustomerStatus {
     ACTIVE, BLOCKED

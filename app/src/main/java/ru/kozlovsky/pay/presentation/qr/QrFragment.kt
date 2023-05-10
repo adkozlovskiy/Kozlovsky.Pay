@@ -31,7 +31,7 @@ class QrFragment : BaseBottomSheetDialog<QrViewModel, DialogQrBinding>() {
 
         collectOnLifecycle(viewModel.account) {
             binding.accNumber.text = getString(
-                R.string.account_number_placeholder, it.id.toString().takeLast(3)
+                R.string.account_number_placeholder_censored, it.id.toString().takeLast(3)
             )
         }
     }

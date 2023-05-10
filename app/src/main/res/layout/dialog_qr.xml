@@ -86,15 +86,13 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <ru.kozlovsky.pay.presentation.view.PrimaryButton
         android:id="@+id/btn_share"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/bg_button"
-        android:text="@string/send_qr"
-        android:textAppearance="@style/Callout"
-        app:layout_constraintTop_toBottomOf="@id/mcv_qr" />
+        app:layout_constraintTop_toBottomOf="@id/mcv_qr"
+        app:text="@string/send_qr" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

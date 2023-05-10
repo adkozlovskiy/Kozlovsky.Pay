@@ -22,8 +22,8 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="match_parent"
         style="@style/Callout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="32dp"
@@ -47,12 +47,10 @@
 
         <EditText
             android:id="@+id/code"
-            android:textAppearance="@style/Title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:background="@null"
-            android:textColor="@color/white_soft"
             android:gravity="center"
             android:inputType="number"
             android:letterSpacing="0.5"
@@ -61,14 +59,16 @@
             android:minEms="4"
             android:paddingVertical="8dp"
             android:singleLine="true"
+            android:textAppearance="@style/Title1"
+            android:textColor="@color/white_soft"
             android:textSize="48sp" />
 
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/repeat"
-        android:layout_width="wrap_content"
         style="@style/Footnote"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="Запросить повторно через 1:00"

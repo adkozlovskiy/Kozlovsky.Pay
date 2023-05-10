@@ -10,9 +10,6 @@ import ru.kozlovsky.pay.presentation.adapter.BaseViewHolder
 import ru.kozlovsky.pay.presentation.adapter.ListItem
 import ru.kozlovsky.pay.util.Constants.BALANCE_HIDDEN_VALUE
 import ru.kozlovsky.pay.util.extension.formatAsCurrency
-import ru.kozlovsky.pay.util.extension.getMaskedText
-import java.text.NumberFormat
-import java.util.Currency
 
 class AccountDelegate(
     private val onShareClicked: (Account) -> Unit,

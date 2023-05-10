@@ -2,7 +2,6 @@ package ru.kozlovsky.pay.domain.navigation
 
 import android.os.Bundle
 import androidx.annotation.IdRes
-import androidx.annotation.NavigationRes
 import androidx.navigation.NavOptions
 
 sealed class NavigationEvent {
@@ -12,10 +11,11 @@ sealed class NavigationEvent {
     data class Navigation(
         @IdRes val targetRes: Int,
         val args: Bundle? = null,
-        val navOptions: NavOptions? = null
+        val navOptions: NavOptions? = null,
+        @IdRes val popBackStack: Int? = null
     ) : NavigationEvent()
 
     data class Result(
         val value: Any?
-    ): NavigationEvent()
+    ) : NavigationEvent()
 }

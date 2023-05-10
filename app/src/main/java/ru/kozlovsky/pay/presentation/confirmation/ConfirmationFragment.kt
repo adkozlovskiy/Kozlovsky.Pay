@@ -1,8 +1,8 @@
 package ru.kozlovsky.pay.presentation.confirmation
 
+import androidx.core.widget.doAfterTextChanged
 import dagger.hilt.android.AndroidEntryPoint
 import ru.kozlovsky.pay.core.BaseFragment
-import ru.kozlovsky.pay.core.BaseViewModel
 import ru.kozlovsky.pay.databinding.FragmentConfirmationBinding
 import ru.kozlovsky.pay.domain.navigation.navigateUp
 
@@ -21,6 +21,14 @@ class ConfirmationFragment : BaseFragment<ConfirmationViewModel, FragmentConfirm
             fpToolbar.setNavigationOnClickListener {
                 viewModel.navigateUp()
             }
+            code.doAfterTextChanged {
+                viewModel.onCodeChanged(it.toString())
+            }
         }
+    }
+
+    companion object {
+        const val KEY_REQUEST_CODE_RESPONSE = "request.code.response"
+        const val KEY_REQUEST_CODE = "request.code"
     }
 }

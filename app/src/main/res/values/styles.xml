@@ -13,6 +13,12 @@
         <item name="titleMarginStart">16dp</item>
     </style>
 
+    <style name="Widget.MaterialComponents.LinearProgressIndicator.Blue">
+        <item name="trackColor">@color/blue_accent_light2</item>
+        <item name="indicatorColor">@color/blue_accent</item>
+        <item name="android:indeterminate">true</item>
+    </style>
+
     <style name="RoundedBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/RoundedBottomSheet</item>
     </style>

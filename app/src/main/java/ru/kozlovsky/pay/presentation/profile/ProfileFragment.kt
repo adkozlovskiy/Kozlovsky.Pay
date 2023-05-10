@@ -18,14 +18,10 @@ class ProfileFragment : BaseFragment<ProfileViewModel, FragmentProfileBinding>()
     override fun configureView() {
         super.configureView()
         with(binding) {
-            itemMyData.title.text = getString(R.string.profile_item_my_data)
             itemSafety.title.text = getString(R.string.profile_item_safety)
             itemSettings.title.text = getString(R.string.profile_item_settings)
             itemSettings.root.setOnClickListener {
                 viewModel.navigate(R.id.settingsFragment)
-            }
-            itemMyData.root.setOnClickListener {
-                viewModel.navigate(R.id.customerDataFragment)
             }
             itemSupport.root.setOnClickListener {
                 viewModel.navigate(R.id.supportFragment)
@@ -41,7 +37,4 @@ class ProfileFragment : BaseFragment<ProfileViewModel, FragmentProfileBinding>()
         }
     }
 
-    override fun observeViewModel() {
-        super.observeViewModel()
-    }
 }

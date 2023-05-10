@@ -3,22 +3,17 @@ package ru.kozlovsky.pay.presentation.home
 import android.content.Context
 import android.hardware.Sensor
 import android.hardware.SensorManager
-import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import dagger.hilt.android.AndroidEntryPoint
 import ru.kozlovsky.pay.R
 import ru.kozlovsky.pay.core.BaseFragment
-import ru.kozlovsky.pay.data.model.dto.AccountStatus
 import ru.kozlovsky.pay.databinding.FragmentHomeBinding
-import ru.kozlovsky.pay.domain.model.Account
 import ru.kozlovsky.pay.domain.navigation.navigate
 import ru.kozlovsky.pay.presentation.adapter.compositeAdapter
 import ru.kozlovsky.pay.presentation.pager.AdjustingPageChangeCallback
-import ru.kozlovsky.pay.presentation.qr.QrFragment
 import ru.kozlovsky.pay.util.ShakeListener
 import ru.kozlovsky.pay.util.extension.collectOnLifecycle
 import ru.kozlovsky.pay.util.extension.setupPagerAdapter
-import ru.kozlovsky.pay.util.extension.shareTextPlain
 import ru.kozlovsky.pay.util.extension.updateOffscreenPageLimit
 
 @AndroidEntryPoint

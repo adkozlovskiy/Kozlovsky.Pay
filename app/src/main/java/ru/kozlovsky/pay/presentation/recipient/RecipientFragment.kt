@@ -23,10 +23,6 @@ class RecipientFragment : BaseFragment<RecipientViewModel, FragmentRecipientBind
         }
     }
 
-    override fun observeViewModel() {
-        super.observeViewModel()
-    }
-
     companion object {
         const val KEY_PHONE_NUMBER = "phone.number"
     }

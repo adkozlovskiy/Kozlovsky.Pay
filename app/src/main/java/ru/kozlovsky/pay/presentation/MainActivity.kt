@@ -45,11 +45,15 @@ class MainActivity : AppCompatActivity() {
     @Suppress("deprecation")
     private fun proceedReInitToNavigation(navController: NavController) {
         binding.amBottomNavView.setOnNavigationItemSelectedListener { item ->
-            navController.navigate(
-                item.itemId,
-                bundleOf(KEY_RE_INIT to true)
-            )
-            true
+            // блокируем навигацию на уже выбранный элемент
+            if (item.itemId != navController.currentDestination?.id) {
+                navController.navigate(
+                    item.itemId,
+                    bundleOf(KEY_RE_INIT to true)
+                )
+                return@setOnNavigationItemSelectedListener true
+            }
+            return@setOnNavigationItemSelectedListener false
         }
     }
 

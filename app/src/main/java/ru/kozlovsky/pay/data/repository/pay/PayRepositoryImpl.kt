@@ -7,7 +7,4 @@ import javax.inject.Inject
 class PayRepositoryImpl @Inject constructor(
     private val payService: PayService,
     private val dao: ProfileDao,
-) : PayRepository {
-
-
-}
+) : PayRepository

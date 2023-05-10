@@ -29,12 +29,10 @@ class TransactionsFragment : BaseFragment<TransactionsViewModel, FragmentTransac
         binding.ftRecycler.adapter = transactionsAdapter
         transactionsAdapter.submitList(
             listOf(
-                Transaction(1, 12312312, 13.41)
+                Transaction(1, 12312312, 130.41, "Максим К.", true),
+                Transaction(2, 12312312, 300.00, "Теплов А.", false),
             )
         )
     }
 
-    override fun observeViewModel() {
-        super.observeViewModel()
-    }
 }

@@ -7,7 +7,6 @@ import ru.kozlovsky.pay.core.BaseFragment
 import ru.kozlovsky.pay.databinding.FragmentAccountDetailsBinding
 import ru.kozlovsky.pay.domain.navigation.navigate
 import ru.kozlovsky.pay.domain.navigation.navigateUp
-import ru.kozlovsky.pay.util.Constants
 import ru.kozlovsky.pay.util.extension.collectOnLifecycle
 import ru.kozlovsky.pay.util.extension.formatAsCurrency
 import ru.kozlovsky.pay.util.extension.orEmpty

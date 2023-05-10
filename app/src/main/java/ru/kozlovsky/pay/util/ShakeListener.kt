@@ -26,7 +26,7 @@ class ShakeListener(
         val gForce = sqrt(gX * gX + gY * gY + gZ * gZ)
 
         if (gForce > SHAKE_THRESHOLD_GRAVITY) {
-            val now = System.currentTimeMillis();
+            val now = System.currentTimeMillis()
             if (shakeTimestamp + SHAKE_SLOP_TIME_MS > now) {
                 return
             }

@@ -13,12 +13,16 @@ class SupportViewModel @Inject constructor() : BaseViewModel() {
     val messages = _messages.asStateFlow()
 
     init {
-        // todo unmock
         _messages.value = listOf(
-            Message(System.currentTimeMillis(), "Привет", true),
-            Message(System.currentTimeMillis(), "Привет!", false),
-            Message(System.currentTimeMillis(), "Деньги не приходят на мой счет, подскажите, что делать", true),
-            Message(System.currentTimeMillis(), "Деньги придут в течение получаса", false)
+            Message(System.currentTimeMillis(),
+                "Здравствуйте, отправил деньги на счет, а они до сих пор не пришли",
+                true),
+            Message(System.currentTimeMillis(), "Здравствуйте, уточните, пожалуйста, когда делала перевод?", false),
+            Message(System.currentTimeMillis(), "Вчера в 18:57", true),
+            Message(System.currentTimeMillis(),
+                "Перевод задерживается. Пожалуйста, ожидайте ещё около получаса",
+                false),
+            Message(System.currentTimeMillis(), "Могу я еще чем-то помочь?", false)
         )
     }
 

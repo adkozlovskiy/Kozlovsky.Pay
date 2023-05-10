@@ -143,14 +143,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dqr_cv_amount" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <ru.kozlovsky.pay.presentation.view.PrimaryButton
         android:id="@+id/dqr_btn_send"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="12dp"
-        android:background="@drawable/bg_button"
-        android:text="@string/btn_continue"
-        android:textAppearance="@style/Callout"
-        app:layout_constraintTop_toBottomOf="@id/disclaimer" />
+        app:layout_constraintTop_toBottomOf="@id/disclaimer"
+        app:text="@string/btn_continue" />
 </androidx.constraintlayout.widget.ConstraintLayout>

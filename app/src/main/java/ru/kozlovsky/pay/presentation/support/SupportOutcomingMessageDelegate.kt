@@ -3,7 +3,6 @@ package ru.kozlovsky.pay.presentation.support
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import ru.kozlovsky.pay.R
-import ru.kozlovsky.pay.databinding.ItemIncomingMessageBinding
 import ru.kozlovsky.pay.databinding.ItemOutcomingMessageBinding
 import ru.kozlovsky.pay.domain.model.Message
 import ru.kozlovsky.pay.presentation.adapter.BaseDelegate

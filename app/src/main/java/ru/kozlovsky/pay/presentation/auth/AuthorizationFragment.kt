@@ -7,8 +7,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import ru.kozlovsky.pay.R
 import ru.kozlovsky.pay.core.BaseFragment
 import ru.kozlovsky.pay.databinding.FragmentAuthorizationBinding
-import ru.kozlovsky.pay.domain.navigation.navigate
 import ru.kozlovsky.pay.util.Constants
+import ru.kozlovsky.pay.util.extension.collectOnLifecycle
 import ru.kozlovsky.pay.util.extension.showKeyboard
 
 @AndroidEntryPoint
@@ -18,16 +18,6 @@ class AuthorizationFragment : BaseFragment<AuthorizationViewModel, FragmentAutho
 
     override fun getViewBinding(): FragmentAuthorizationBinding {
         return FragmentAuthorizationBinding.inflate(layoutInflater)
-    }
-
-    private val textChangedValueListener = object : MaskedTextChangedListener.ValueListener {
-        override fun onTextChanged(
-            maskFilled: Boolean,
-            extractedValue: String,
-            formattedValue: String
-        ) {
-            viewModel.afterInputChanged(maskFilled, formattedValue)
-        }
     }
 
     override fun configureView() {
@@ -40,19 +30,20 @@ class AuthorizationFragment : BaseFragment<AuthorizationViewModel, FragmentAutho
             frEtNumber.setRawInputType(EditorInfo.TYPE_CLASS_PHONE)
             MaskedTextChangedListener.installOn(
                 frEtNumber,
-                Constants.PHONE_MASK,
-                textChangedValueListener
+                Constants.PHONE_MASK
             )
             ftBtnContinue.setOnClickListener {
-                viewModel.navigate(to = R.id.confirmationFragment)
-            }
-            forgotPassword.setOnClickListener {
-                viewModel.navigate(to = R.id.recoveryPasswordFragment)
+                viewModel.requestCode(
+                    phone = frEtNumber.text.toString()
+                )
             }
         }
     }
 
     override fun observeViewModel() {
         super.observeViewModel()
+        collectOnLifecycle(viewModel.loading) {
+            binding.ftBtnContinue.loading = it
+        }
     }
 }

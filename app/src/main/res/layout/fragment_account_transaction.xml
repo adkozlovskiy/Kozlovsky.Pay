@@ -60,16 +60,14 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <ru.kozlovsky.pay.presentation.view.PrimaryButton
         android:id="@+id/ft_btn_continue"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/bg_button"
-        android:text="@string/btn_continue"
-        android:textAppearance="@style/Callout"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:text="@string/btn_continue">
 
-    </androidx.appcompat.widget.AppCompatButton>
+    </ru.kozlovsky.pay.presentation.view.PrimaryButton>
 </androidx.constraintlayout.widget.ConstraintLayout>
